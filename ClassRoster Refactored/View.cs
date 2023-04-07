@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static ClassRoster_Refactored.Model;
 
 namespace ClassRoster_Refactored
 {
@@ -92,6 +94,29 @@ namespace ClassRoster_Refactored
             Console.WriteLine(firstName + " " + lastName + " " + Email);
         }
 
+        public void throwLists(List<Student> classTotal, List<Instructor> instructorTotal)
+        {
+            foreach (Instructor currentInstructor in instructorTotal)
+            {
+                printProfessor(currentInstructor.FirstName, currentInstructor.LastName, currentInstructor.Email);
+            }
+            foreach (Student currentStudent in classTotal)
+            {
+                printStudent(currentStudent.FirstName, currentStudent.LastName, currentStudent.Rank);
+            }
+        }
+
+        public void throwSortedLists(List<Student> sortedList, List<Instructor> instructorTotal)
+        {
+            foreach (Instructor currentInstructor in instructorTotal)
+            {
+                printProfessor(currentInstructor.FirstName, currentInstructor.LastName, currentInstructor.Email);
+            }
+            foreach (Student currentStudent in sortedList)
+            {
+                printStudent(currentStudent.FirstName, currentStudent.LastName, currentStudent.Rank);
+            }
+        }
 
     }
 }
